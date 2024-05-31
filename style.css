@@ -1,0 +1,229 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+*::selection {
+  display: none;
+}
+:root {
+  --cell-parameter: 85px;
+  --mark-size: calc(var(--cell-parameter) * 0.9);
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  font-family: sans-serif;
+}
+
+.board {
+  /* width: 100vw; */
+  height: 100vh;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3, auto);
+
+  justify-items: center;
+  align-items: center;
+}
+
+.cell {
+  width: var(--cell-parameter);
+  height: var(--cell-parameter);
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  position: relative;
+
+  /* for ::before & ::after elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+  border-left: none;
+}
+.cell:nth-child(3n) {
+  border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+  border-bottom: none;
+}
+
+.cell.x,
+.cell.o {
+  cursor: not-allowed;
+}
+
+.cell.x::before,
+.cell.x::after {
+  position: absolute;
+  /* this will help them to cancel out the offset */
+  content: "";
+  width: calc(var(--mark-size) * 0.15);
+  height: var(--mark-size);
+  background-color: black;
+}
+
+.cell.x::after {
+  transform: rotate(45deg);
+}
+.cell.x::before {
+  transform: rotate(-45deg);
+}
+
+.cell.o::before,
+.cell.o::after {
+  position: absolute;
+  /* this will help them to cancel out the offset */
+  content: "";
+  border-radius: 50%;
+  background-color: black;
+}
+
+.cell.o::after {
+  width: calc(var(--mark-size) * 0.7);
+  height: calc(var(--mark-size) * 0.7);
+  background: white;
+}
+.cell.o::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+}
+
+/* it is the hover effect code */
+
+/* it can written in the short manner, but by writting 
+    it in a long manner it is very easy to understand */
+
+.board.o .cell:not(.x):not(.o):hover::before,
+.board.o .cell:not(.x):not(.o):hover::after {
+  position: absolute;
+  /* this will help them to cancel out the offset */
+  content: "";
+  border-radius: 50%;
+  background-color: rgb(171, 171, 171);
+}
+
+.board.o .cell:not(.x):not(.o):hover::after {
+  width: calc(var(--mark-size) * 0.7);
+  height: calc(var(--mark-size) * 0.7);
+  background: white;
+}
+.board.o .cell:not(.x):not(.o):hover::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+}
+
+/* do not worry it is only a copy */
+
+/* it is the hover effect code */
+
+/* it can written in the short manner, but by writting 
+    it in a long manner it is very easy to understand */
+
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
+  position: absolute;
+  /* this will help them to cancel out the offset */
+  content: "";
+  width: calc(var(--mark-size) * 0.15);
+  height: var(--mark-size);
+  background-color: rgb(171, 171, 171);
+}
+
+.board.x .cell:not(.x):not(.o):hover::after {
+  transform: rotate(45deg);
+}
+.board.x .cell:not(.x):not(.o):hover::before {
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* here is the winning message screen setup setup */
+
+.winning-message{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 1);
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5vh 0;
+
+}
+
+.winning-message div{
+  font-size: 7vh;
+  color:white;
+  font-weight: 700;
+  display: block;
+
+}
+
+.winning-message button{
+  transition: all ease 0.3s;
+  border: 3.5px solid white;
+  padding: 2.5vh 4vh;
+  background-color: black;
+  color: white;
+  font-size: 3vh;
+  font-weight: 700;
+  cursor: pointer;
+  
+}
+
+
+.winning-message button:hover{
+  color:black;
+  background-color: white;
+
+}
+
+.winning-message.show{
+  display: flex;
+}
