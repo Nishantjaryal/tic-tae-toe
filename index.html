@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-
+    <link rel="stylesheet" href="init.css" />
+    <link rel="stylesheet" href="./style.css" />
 
     <script src="./script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
+    <div id="initdiv">
+        <h1 class="heading">Tic-Tae-Toe</h1>
+      <div class="brutalist-container">
+        <input
+          placeholder="X"
+          class="brutalist-input smooth-type"
+          type="text"
+          id="user1"
+        />
+        <label class="brutalist-label">USER1</label>
+      </div>
 
-    <!-- this is after plan -->
-    <!-- <div id="player_list">
-        <div>
-            <h2 id="p1">
-                Player 1
-            </h2>
-            
-        </div>
-        <div>
-            <h2 id="p2">
-                Player 2
-            </h2>
-            
-        </div>
-    </div> -->
+      <div class="brutalist-container">
+        <input
+          placeholder="O"
+          class="brutalist-input smooth-type"
+          type="text"
+          id="user2"
+        />
+        <label class="brutalist-label">USER 2</label>
+      </div>
 
+      <div class="buttons">
+        <button class="btn" id="init">
+          <span></span>
+          <p
+            data-start="good luck!"
+            data-text="start!"
+            data-title="new game"
+          ></p>
+        </button>
+      </div>
+    </div>
 
     <div class="board x" id="board">
-        <div class="cell" data-cell ></div>
-        <div class="cell" data-cell ></div>
-        <div class="cell" data-cell ></div>
-        <div class="cell" data-cell ></div>
-        <div class="cell" data-cell ></div>
-        <div class="cell" data-cell ></div>
-        <div class="cell" data-cell ></div>
-        <div class="cell" data-cell ></div>
-        <div class="cell" data-cell ></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
     </div>
     <div class="winning-message" id="winningMessage">
-        <div class="winning-message-text"></div>
-        <button id="restartButton">Restart</button>
+      <div class="winning-message-text"></div>
+      <button id="restartButton">Restart</button>
     </div>
-
-
-
-</body>
+  </body>
 </html>
