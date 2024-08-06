@@ -202,6 +202,7 @@ body {
   color:white;
   font-weight: 700;
   display: block;
+  text-align: center;
 
 }
 
@@ -216,7 +217,9 @@ body {
   cursor: pointer;
   
 }
-
+.winning-message-text{
+  text-align: center;
+}
 
 .winning-message button:hover{
   color:black;

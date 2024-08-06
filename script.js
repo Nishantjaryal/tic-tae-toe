@@ -97,8 +97,8 @@ const handleclick = (e) => {
     if (checkWin(currentClass)) {
         console.log(`${currentClass} is winner`)
 
-        if (currentClass === x[0]) Winning_message.innerText = `Winner is: ${x[1]}`
-        if (currentClass === o[0]) Winning_message.innerText = `Winner is: ${o[1]}`
+        if (currentClass === x[0]) Winning_message.innerText = `Winner is ${x[1].toUpperCase()}`
+        if (currentClass === o[0]) Winning_message.innerText = `Winner is ${o[1].toUpperCase()}`
 
 
         winningScreen.classList.add(SHOW_WINNER)
